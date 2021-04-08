@@ -1,0 +1,217 @@
+@import "../../../../scss/custom-variable";
+.sidebar {
+    padding-top: 102px;
+    position: fixed;
+    width: 350px;
+    left: 0;
+    background: #F9FBFF;
+    .btn-group {
+        background: $btnbg;
+        display: flex;
+        padding: 16px 15px;
+        width: 100%;
+        ul {
+            background: rgba(40, 46, 196, 0.18);
+            padding: 0;
+            margin: 0;
+            width: 100%;
+            border: 1px solid rgba(255 255 255 / 18%);
+            border-radius: 8px;
+            display: flex;
+            justify-content: space-around;
+            padding: 3px;
+            li {
+                outline: none;
+                box-shadow: none;
+                border-radius: 8px;
+                display: inline-block;
+                outline: none;
+                font-size: $font-size-14;
+                font-family: "ProximaNovaRegular";
+                letter-spacing: 0px;
+                color: $white-color;
+                opacity: 0.54;
+                text-transform: capitalize;
+                text-align: center;
+                width: 50%;
+                cursor: pointer;
+            }
+            .active {
+                box-shadow: 0px 6px 20px #00000029;
+                border-radius: 6px;
+                opacity: 1;
+                background: $white-color;
+                color: $btnbg;
+            }
+        }
+        .create-event-btn {
+            li {
+                width: 33.3333%;
+            }
+        }
+    }
+    .flex-column {
+        padding: 0 20px 100px;
+        overflow-y: auto;
+        height: 80vh;
+        display: inherit !important;
+        li {
+            margin-top: 20px;
+            box-sizing: border-box;
+            position: relative;
+            border-radius: 8px;
+            img {
+                width: 100%;
+                height: 164px;
+                object-fit: cover;
+                border-radius: 8px;
+            }
+            .user-item {
+                position: absolute;
+                top: 10px;
+                left: 10px;
+                right: 10px;
+                display: flex;
+                justify-content: space-between;
+                .username {
+                    display: flex;
+                    .userimg {
+                        width: 30px;
+                        height: 30px;
+                        border-radius: 50%;
+                        padding: 2px;
+                        border: solid 1px $white-color;
+                    }
+                    p {
+                        letter-spacing: 0px;
+                        color: $white-color;
+                        opacity: 1;
+                        font-size: $font-size-13;
+                        font-family: "ProximaNovaLight";
+                        text-transform: capitalize;
+                        margin: 0 0 0 10px;
+                    }
+                }
+                .horn {
+                    width: 20px;
+                    height: auto;
+                    object-fit: contain;
+                }
+            }
+            .basement-item {
+                display: flex;
+                justify-content: space-between;
+                position: absolute;
+                left: 10px;
+                right: 10px;
+                bottom: 10px;
+                .basement {
+                    h2 {
+                        letter-spacing: 0px;
+                        color: $white-color;
+                        opacity: 1;
+                        font-size: $font-size-17;
+                        font-family: "ProximaNovaBold";
+                        text-transform: capitalize;
+                        margin: 0 0 5px;
+                    }
+                    p {
+                        letter-spacing: 0px;
+                        color: $white-color;
+                        opacity: 1;
+                        font-size: $font-size-11;
+                        font-family: "ProximaNovaLight";
+                        margin: 0;
+                        line-height: 12px;
+                        span {
+                            margin-left: 20px;
+                        }
+                    }
+                }
+                .btn-item {
+                    letter-spacing: 0px;
+                    color: $white-color;
+                    opacity: 1;
+                    font-size: $font-size-11;
+                    font-family: "ProximaNovaRegular";
+                    text-align: center;
+                    border-radius: 4px;
+                    background: $btnbg-orange;
+                    outline: none;
+                    border: none;
+                    line-height: 22px;
+                    padding: 0 10px;
+                    height: 22px;
+                    margin-top: 15px;
+                }
+            }
+        }
+    }
+}
+
+.toggle-sidebar {
+    border: none;
+    background: transparent;
+    padding: 0;
+    outline: none;
+    display: none;
+    img {
+        width: 25px;
+        opacity: .8;
+    }
+}
+
+.dropdown-event {
+    .dropdown-menu {
+        right: 0 !important;
+        left: inherit !important;
+        min-width: 7rem !important;
+        li {
+            margin: 0;
+            line-height: 30px;
+            a {
+                padding: 0rem 1rem;
+                font-size: $font-size-13;
+            }
+        }
+    }
+}
+@media screen and (max-width: 992px) {
+    .desktop-view {
+        display: none;
+    }
+    .toggle-mobile {
+        margin-top: 0 !important;
+        right: -24px;
+        position: absolute !important;
+        top: 20px !important;
+        padding-left: 0px !important;
+    }
+    .sidebar {
+        position: absolute;
+        width: 300px;
+        left: 0px;
+        top: 102px;
+        width: 280px;
+        z-index: 999999;
+        padding-top: 0;
+    }
+    .toggle-sidebar {
+        display: block;
+        padding-left: 15px;
+        margin-top: 10px;
+        z-index: 9999;
+        position: absolute;
+        top: 100px;
+    }
+}
+
+@media(max-width:575px) {
+    .toggle-sidebar {
+        top: 80px;
+        margin-top: 0px;
+    }
+    .sidebar {
+        top: 72px;
+    }
+}

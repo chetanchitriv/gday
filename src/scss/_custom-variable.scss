@@ -1,0 +1,124 @@
+/*===Font Family====*/ // Font Familys
+
+/* @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap'); */
+
+@font-face {
+    font-family: "ProximaNovaBold";
+    src: url("/assets/fonts/ProximaNova-Bold.eot");
+    src: url("/assets/fonts/ProximaNova-Bold.eot?#iefix") format("embedded-opentype"), url("/assets/fonts/ProximaNova-Bold.otf") format("opentype"), url("/assets/fonts/ProximaNova-Bold.svg") format("svg"), url("/assets/fonts/ProximaNova-Bold.ttf") format("truetype"), url("/assets/fonts/ProximaNova-Bold.woff") format("woff"), url("/assets/fonts/ProximaNova-Bold.woff2") format("woff2");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "ProximaNovaLight";
+    src: url("/assets/fonts/ProximaNova-Light.eot");
+    src: url("/assets/fonts/ProximaNova-Light.eot?#iefix") format("embedded-opentype"), url("/assets/fonts/ProximaNova-Light.otf") format("opentype"), url("/assets/fonts/ProximaNova-Light.svg") format("svg"), url("/assets/fonts/ProximaNova-Light.ttf") format("truetype"), url("/assets/fonts/ProximaNova-Light.woff") format("woff"), url("/assets/fonts/ProximaNova-Light.woff2") format("woff2");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "ProximaNovaRegular";
+    src: url("/assets/fonts/ProximaNova-Regular.eot");
+    src: url("/assets/fonts/ProximaNova-Regular.eot?#iefix") format("embedded-opentype"), url("/assets/fonts/ProximaNova-Regular.otf") format("opentype"), url("/assets/fonts/ProximaNova-Regular.svg") format("svg"), url("/assets/fonts/ProximaNova-Regular.ttf") format("truetype"), url("/assets/fonts/ProximaNova-Regular.woff") format("woff"), url("/assets/fonts/ProximaNova-Regular.woff2") format("woff2");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "ProximaNovaSemibold";
+    src: url("/assets/fonts/ProximaNova-Semibold.eot");
+    src: url("/assets/fonts/ProximaNova-Semibold.eot?#iefix") format("embedded-opentype"), url("/assets/fonts/ProximaNova-Semibold.otf") format("opentype"), url("/assets/fonts/ProximaNova-Semibold.svg") format("svg"), url("/assets/fonts/ProximaNova-Semibold.ttf") format("truetype"), url("/assets/fonts/ProximaNova-Semibold.woff") format("woff"), url("/assets/fonts/ProximaNova-Semibold.woff2") format("woff2");
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+/*--- Font Variable ---*/
+
+$ProximaNovaBold: 'ProximaNovaBold';
+$ProximaNovaLight: 'ProximaNovaLight';
+$ProximaNovaRegular: 'ProximaNovaRegular';
+$ProximaNovaSemibold: 'ProximaNovaSemibold';
+
+/*--- Font Weight ---*/
+
+
+/* $light: 300;
+$Regular: 400;
+$Medium: 500;
+$Semi-bold: 600;
+$Bold: 700;
+$Extra-bold: 800;
+$Black: 900; */
+
+
+/*=== Font Size ===*/
+
+$font-size-9:9px;
+$font-size-10:10px;
+$font-size-11:11px;
+$font-size-12:12px;
+$font-size-13:13px;
+$font-size-14:14px;
+$font-size-15:15px;
+$font-size-16:16px;
+$font-size-17:17px;
+$font-size-18:18px;
+$font-size-19:19px;
+$font-size-20:20px;
+$font-size-24:20px;
+$font-size-26:26px;
+$font-size-28:28px;
+$font-size-34:34px;
+$font-size-42:42px;
+$banner-title:64px;
+
+/*=== Font Color ===*/
+
+$notificatontitle:#1B222E;
+$notificatontext:#6C788E;
+$addmany-active-color:#4590A0;
+$title-color:#372A48;
+$small-title-color:#858585;
+$text-color:#282828;
+$footer-title-color:#333333;
+$header-title-color:#4A4A4A;
+$labelsmall:#A5A5A5;
+$labeltitle:#0A193C;
+$labeltext:#78909C;
+$white-color:#ffff;
+$black-color:#000;
+$btnbg:#4285F4;
+$btnbg-orange:#FF2F57;
+$footrBg-color:rgba(0,
+56,
+68,
+0.05);
+$bodyBg-color:#F6F6F6;
+$CopyrightBg-color:#d9e2e3;
+$borderbefore-color:#2B7787;
+$inputborder-color:#ccc;
+$box-shadow-color:#0000000D;
+$checkboxBorder-color:#A7A7A7;
+$success-color:#14BF43;
+$notification-color:#FF4646;
+$profiletext-color:#202126;
+$toggelbg:#a5bfc5;
+$opecity7:rgba(0,
+56,
+68,
+0.07);
+$opecity71:rgba(0,
+56,
+68,
+0.71);
+$opecity5:rgba(178,
+178,
+178,
+0.5);
+$opecity6:rgba(194,
+194,
+194,
+0.6);

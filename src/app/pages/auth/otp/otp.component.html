@@ -1,0 +1,44 @@
+<div class="auth-screens">
+    <form *ngIf="otpForm" [formGroup]="otpForm" (ngSubmit)="onOtp()">
+
+        <div class="row">
+
+            <div class="col-lg-6 col-md-12 col-sm-12">
+                <div class="banner_text">
+                    <img src="assets/img/dday-img/auth-leftside.png" class="img-fluid">
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-12 col-sm-12">
+                <div class="right-side-page">
+                    <div class="form-content">
+                        <h4 class="modal-title pull-left">Enter OTP</h4>
+                        <p>To verify mobile number please Enter the OTP received on your phone </p>
+
+                        <div class="form-group input-group">
+                            <div class="has-float-label">
+                                <input type="text" class="form-control" formControlName="otp" placeholder="{{'OTP' | translate}}" trim
+                                    maxlength="10">
+                                <label>{{'OTP' | translate}}</label>
+                            </div>
+                            <div class="validation-div">
+                                <app-validation-message [control]="otpForm.controls['otp']"
+                                    [messages]="messageList.otp">
+                                </app-validation-message>
+                                <div (click)="requestOTP()" [class]="!enableOTP?'disable-btn resend-otp':'resend-otp'">
+                                    Resend OTP? <span>  <countdown  #cd  [config]="{leftTime: 120}"></countdown>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="btn_group">
+                            <button type="submit" class="dark-green" >Proceed</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </form>
+</div>

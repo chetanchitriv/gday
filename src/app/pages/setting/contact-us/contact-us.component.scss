@@ -1,0 +1,44 @@
+@import "../../../../scss/custom-variable";
+.modal-title {
+    color: $title-color;
+    font-size: $font-size-20;
+    font-family: "ProximaNovaBold";
+    text-transform: capitalize;
+}
+
+form {
+    .form-group {
+        margin-top: 15px;
+    }
+}
+
+.has-float-label {
+    label {
+        letter-spacing: 0px;
+        color: $text-color;
+        font-size: $font-size-14;
+        font-family: "ProximaNovaRegular";
+    }
+}
+
+.btn-success {
+    border: none;
+    outline: none;
+    box-shadow: 0px 10px 20px #0289b71a !important;
+    width: 120px;
+    margin-top: 20px;
+}
+
+textarea {
+    border: solid 1px #ccc !important;
+    padding: 10px !important;
+    border-radius: 2px !important;
+}
+
+
+@media screen and (max-width:575px) {
+    .container{
+        text-align: center;
+    }
+ 
+}

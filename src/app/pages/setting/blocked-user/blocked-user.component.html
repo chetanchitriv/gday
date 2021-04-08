@@ -1,0 +1,35 @@
+<div class="container">
+    <h4 class="modal-title pull-left mt-3">Block User</h4>
+    <div class="row mt-3">
+        <div class="col-md-6">
+            <ul class="list-group-box">
+                <li class="list-item" *ngFor="let blockuser of blockusers">
+                    <img src="assets/img/transfer-user3.png" class="rounded-circle" alt="round img">
+                    <div class="user-box">
+                   
+                        <label> {{blockuser.fullName}}</label>
+                        <button type="button" class="round-btn" (click)="unblock(blockuser.userId)">Unblock</button>
+                    </div>
+                </li>
+         
+            </ul>
+            <div class="user-box" *ngIf="blockusers && blockusers.length == 0">  
+                   
+                <label> Blocked user not found</label>
+                
+            </div>
+        </div>
+        <!-- <div class="col-md-6">
+            <ul class="list-group-box">
+                <li class="list-item">
+                    <img src="assets/img/transfer-user3.png" class="rounded-circle" alt="round img">
+                    <div class="user-box">
+                        <label> Alex Rose</label>
+                        <button type="button" class="round-btn">Unblok</button>
+                    </div>
+                </li>
+               
+            </ul>
+        </div> -->
+    </div>
+</div>

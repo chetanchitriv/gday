@@ -1,0 +1,49 @@
+<div class="container">
+    <div class="title-div">
+        <h3 class="main-title">Add Member</h3>
+        <input type="text" placeholder="Search Contact" class="search-item"  [(ngModel)]="searchText">
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <h6>G'dayHive contact </h6>
+            <ng-container *ngIf="contacts && contacts.app && contacts?.app?.length;else app">
+                <div class="dayHive-contacts" *ngFor="let contact of contacts.app  | filter:searchText">
+                    <img [src]="contact.event_image" class="rounded-circle" alt="contact">
+                    <div class="dayHive-box">
+                        <div class="dayHive-box-content">
+                            <label>{{contact.name}}</label>
+                            <small> {{contact.country_code+contact.mobile}} </small>
+                        </div>
+                        <button class="round-btn" (click)="addMember(contact)">Add</button>
+                    </div>
+                </div>
+               
+            </ng-container>
+            
+            <ng-template #app>
+                No G'dayHive Contact Found
+                                </ng-template>
+        </div>
+        <div class="col-md-6">
+            <h6>All contact </h6>
+            <ng-container *ngIf="contacts && contacts?.nonapp && contacts?.nonapp?.length;else nonapp;">
+                <div class="dayHive-contacts" *ngFor="let contact of contacts.nonapp | filter:searchText">
+                    <img [src]="contact.event_image" class="rounded-circle" alt="round img">
+                    <div class="dayHive-box">
+                        <div class="dayHive-box-content">
+                            <label>{{contact.name}}</label>
+                            <small> {{contact.country_code+contact.mobile}} </small>
+                        </div>
+                        <button class="round-btn">Invite</button>
+                    </div>
+                </div>
+                
+            </ng-container>
+            <ng-template #nonapp>
+                No Contact Found
+                                </ng-template>
+         
+        </div>
+    </div>
+</div>

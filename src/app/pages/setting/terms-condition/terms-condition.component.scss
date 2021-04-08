@@ -1,0 +1,61 @@
+@import "../../../../scss/custom-variable";
+.modal-title {
+    color: $title-color;
+    font-size: $font-size-20;
+    font-family: "ProximaNovaBold";
+    text-transform: capitalize;
+}
+
+h6 {
+    color: $notificatontitle;
+    font-size: $font-size-12;
+    font-family: "ProximaNovaSemibold";
+    text-transform: uppercase;
+    letter-spacing: 0px;
+}
+
+h5 {
+    color: $notificatontitle;
+    font-size: $font-size-12;
+    font-family: "ProximaNovaSemibold";
+    text-transform: inherit;
+    letter-spacing: 0px;
+}
+
+p {
+    color: $notificatontext;
+    font-size: $font-size-12;
+    font-family: "ProximaNovaRegular";
+    text-transform: inherit;
+    letter-spacing: 0px;
+    text-align: left;
+    line-height: 22px;
+    margin-bottom: 10px;
+}
+
+h4 {
+    color: $notificatontitle;
+    font-size: $font-size-12;
+    font-family: "ProximaNovaRegular";
+    text-transform: uppercase;
+    letter-spacing: 0px;
+}
+
+ol {
+    li {
+        color: $notificatontext;
+        font-size: $font-size-12;
+        font-family: "ProximaNovaRegular";
+        text-transform: inherit;
+        letter-spacing: 0px;
+        line-height: 22px;
+        text-align: left;
+        h4 {
+            color: $notificatontitle;
+            font-size: $font-size-12;
+            font-family: "ProximaNovaRegular";
+            text-transform: uppercase;
+            letter-spacing: 0px;
+        }
+    }
+}

@@ -1,0 +1,43 @@
+
+
+<div class="container">
+    <div class="row mt-5">
+        <div class="col-6 m-auto text-center">
+            <img src="../../../assets/img/refer.svg" alt="refer" class="refer">
+            <h5>Refer Friend </h5>
+            <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam adipisci incidunt assumenda perferendis mollitia natus vitae! Placeat ipsam suscipit necessitatibus repellat explicabo ea alias aperiam! </p>
+            <h6>Your Referral Code</h6>
+            <input type="text" [value]="refferal_Code" class="promocode"> <br> <br>
+            <button type="button" class="btn-success" (click)="openModal(template)">Invite Friend </button>
+
+            <br> <br>
+            <h4>Successful Referral : {{AllRefrralcode?.total_referral}}</h4>
+
+        </div>
+        <ng-template #template>
+            <div class="modal-header">
+                <h4 class="modal-title pull-left">Invite Friend </h4>
+                <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+<span aria-hidden="true">&times;</span>
+</button>
+            </div>
+            <div class="modal-body">
+                <div *ngIf="contacts && contacts.nonapp;else nodata;">
+                    <ul class="list-group">
+                        <li class="list-group-item d-flex justify-content-between align-items-center" *ngFor="let contact of contacts.nonapp">
+                            <img src="https://picsum.photos/50" alt=""> <small> {{contact.name}}</small>
+                            <small> {{contact.country_code+contact.mobile}} </small>
+                            <button class="btn btn-outline-success">Invite</button>
+                        </li>
+                   
+                    </ul>  
+                </div>
+                <div #nodata>
+                    No data Available
+                </div>
+             <br> <br>
+                <button  *ngIf="contacts && contacts?.nonapp?.length;"  type="button" class="btn-success"> Send </button>
+            </div>
+        </ng-template>
+    </div>
+</div>

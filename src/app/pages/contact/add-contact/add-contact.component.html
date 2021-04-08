@@ -1,0 +1,69 @@
+<div class="wrapper-body">
+    <div class="profile-bg">
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <form [formGroup]="addContactForm" (ngSubmit)="onSignUp()" *ngIf="addContactForm">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="mx-auto mt-5 profile-pic">
+                                <div class="profile-pic-cover">
+                                    <img src=" https://picsum.photos/80/90" class="rounded-circle  " alt="round img">
+                                    <img src="assets/img/photo-camera.svg" class="photo-camera" alt="round img">
+                                    <input type="file" class="form-control">
+                                </div>
+                                <h6>Frank Richard</h6>
+                                <button type="button" class="btn btn-info rounded-pill"> 
+                                    <img src="assets/img/pencil.svg" class="pencil" alt="pencil">Edit</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-5">
+                        <div class="col-6 pt-4">
+                            <div class="form-group input-group">
+                                <div class="has-float-label">
+                                    <input type="text" class="form-control" formControlName="fullName" trim="blur" maxlength="50" placeholder="{{'NAME' | translate}}">
+                                    <label>{{'NAME' | translate}}</label>
+                                </div>
+                                <div class="validation-div">
+                                    <app-validation-message [control]="addContactForm.controls['fullName']" [messages]="messageList.fullName">
+                                    </app-validation-message>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6 pt-4">
+                            <div class="form-group  input-group">
+                                <div class="custom-select-box">
+                                    <div class="has-float-label">
+                                        <input type="text" class="form-control" formControlName="mobile" placeholder="{{'PHONE_NUMBER' | translate}}" trim maxlength="10">
+                                        <label>{{'PHONE_NUMBER' | translate}}</label>
+                                    </div>
+                                </div>
+                                <div class="validation-div">
+                                    <app-validation-message [control]="addContactForm.controls['mobile']" [messages]="messageList.mobile">
+                                    </app-validation-message>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-12">
+                            <div class="form-group input-group">
+                                <div class="has-float-label">
+                                    <input type="email" class="form-control" formControlName="email" placeholder="{{'EMAIL' | translate}}" trim maxlength="60">
+                                    <label>{{'EMAIL' | translate}}</label>
+                                </div>
+                                <div class="validation-div">
+                                    <app-validation-message [control]="addContactForm.controls['email']" [messages]="messageList.email">
+                                    </app-validation-message>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="submit" prevent-double-submit class=" btn-success">save</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

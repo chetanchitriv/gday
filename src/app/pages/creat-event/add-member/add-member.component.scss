@@ -1,0 +1,90 @@
+@import "../../../../scss/custom-variable";
+h6 {
+    color: $title-color;
+    font-family: "ProximaNovaSemibold";
+    font-size: $font-size-14;
+    letter-spacing: 0px;
+    text-align: left;
+    text-transform: capitalize;
+    margin: 20px auto;
+}
+
+.dayHive-contacts {
+    display: flex;
+    margin-bottom: 15px;
+}
+
+.rounded-circle {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.dayHive-box {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding-top: 5px;
+    margin-left: 15px;
+    border-bottom: solid 1px #DFDFEF;
+    padding-bottom: 15px;
+    .dayHive-box-content {
+        line-height: 22px;
+        label {
+            color: $text-color;
+            letter-spacing: 0px;
+            font-size: $font-size-12;
+            font-family: "ProximaNovaSemibold";
+            display: block;
+            margin: 0;
+            line-height: 14px;
+        }
+        small {
+            color: $small-title-color;
+            font-size: $font-size-12;
+            font-family: "ProximaNovaLight";
+        }
+    }
+    .round-btn {
+        letter-spacing: 0.2px;
+        color: $success-color;
+        font-size: $font-size-10;
+        font-family: "ProximaNovaSemibold";
+        box-shadow: 0px 10px 20px #0289B71A;
+        border: solid 1px $success-color;
+        border-radius: 10px;
+        outline: none;
+        background: #fff;
+        padding: 0 12px;
+        line-height: 21px;
+        height: 21px;
+        margin-top: 5px;
+    }
+}
+
+.title-div {
+    width: 100%;
+    display: inline-block;
+    .search-item {
+        float: right;
+        outline: none;
+        border-radius: 30px;
+        padding: 4px 20px;
+        margin-top: 15px;
+        border: solid 1px #DFDFEF;
+        font-size: $font-size-15;
+        width: 250px;
+    }
+    .main-title {
+        float: left;
+    }
+}
+
+@media screen and (max-width:575px) {
+    .title-div {
+        .search-item {
+            float: left;
+        }
+    }
+}

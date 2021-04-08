@@ -1,0 +1,51 @@
+<div style="width: 350px;border-right: 1px solid #e7e7e7;" class="sidebar">
+    <div class="btn-group">
+        <ul>
+             <li  [class]="selectedEventType == 'upcomming'?'active':''" (click)="selectedEventType = 'upcomming'; getUpcomingEventList()">{{'upcoming' |titlecase  }}</li>
+            <li [class]="selectedEventType == 'current'?'active':''" (click)="selectedEventType = 'current'; getCurrentEventList()"> {{'current' |titlecase  }} </li>
+            <li [class]="selectedEventType == 'past'?'active':''" (click)="selectedEventType = 'past'; getPastEventList()">{{'past' |titlecase  }}</li> 
+            <!-- <li [class]="selectedEventType == 'publicEvents'?'active':''" (click)="selectedEventType = 'publicEvents';getPublicEventList()"> {{'Public Events' |titlecase  }} </li>
+            <li [class]="selectedEventType == 'privateEvents'?'active':''" (click)="selectedEventType = 'privateEvents';getPrivateEventList()">{{'Private Events' |titlecase  }}</li> 
+         -->
+        </ul>
+
+    </div>
+ 
+    
+
+    <ul class="nav flex-column">
+        <li class="nav-item" *ngFor="let Event of Events " (click)="selectedEvent(Event)">
+            <img [src]="Event.event_image ? mediaEndPoint+Event.event_image:'https://homepages.cae.wisc.edu/~ece533/images/airplane.png'" alt="NA">
+            <div class="user-item">
+                <div class="username">
+                    
+                </div>
+                <!-- <a routerLink="editevent/{{Event.eventId}}"   >
+                    <img class="horn"    src="../../../assets/img/three-dots-vertical.svg" />
+                 </a>  -->
+
+                <div dropdown class="dropdown-event">
+                    <a id="button-basic" dropdownToggle aria-controls="dropdown-basic">
+                <img class="horn"    src="../../../assets/img/three-dots-vertical.svg" />
+                </a> 
+                    <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu" role="menu" aria-labelledby="button-basic">
+                      <li role="menuitem"><a class="dropdown-item" routerLink="/create-event/editevent/{{Event.eventId}}">Edit</a></li>
+                      <li role="menuitem"><a class="dropdown-item" href="#">Delete</a></li>
+                    </ul>
+                </div> 
+            </div>
+            <div class="basement-item">
+                <div class="basement">
+                    <h2>{{Event.event_name}}</h2>
+                    <p>Number of Member : {{Event.total_member}} <span>{{Event.start_date}}</span></p>
+                </div>
+                <button class="btn-item">Join</button>
+            </div>
+        </li>
+
+        <li *ngIf="Events && Events?.length == 0">
+            No Events Found
+        </li>
+        
+    </ul>
+</div>

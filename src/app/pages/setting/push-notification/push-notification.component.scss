@@ -1,0 +1,59 @@
+@import "../../../../scss/custom-variable";
+.modal-title {
+    color: $title-color;
+    font-size: $font-size-20;
+    font-family: "ProximaNovaBold";
+    text-transform: capitalize;
+}
+
+.list-item {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    .box-iten {
+        box-shadow: 0px 10px 20px #4A00140A;
+        border: 0.4000000059604645px solid #CCD5E4;
+        border-radius: 4px;
+        padding: 15px;
+        line-height: 1;
+        margin-right: 10px;
+        label {
+            color: $notificatontitle;
+            font-size: $font-size-13;
+            font-family: "ProximaNovaSemibold";
+            text-transform: capitalize;
+            width: 100%;
+            small {
+                color: $notificatontitle;
+                font-size: $font-size-10;
+                font-family: "ProximaNovaRegular";
+                color: $text-color;
+                float: right;
+            }
+        }
+        p {
+            color: $notificatontext;
+            font-size: $font-size-12;
+            font-family: "ProximaNovaRegular";
+            line-height: 20px;
+            margin-bottom: 0;
+        }
+    }
+    .remuve-item {
+        box-shadow: 0px 10px 20px #4A00140A;
+        border: 0.4000000059604645px solid #CCD5E4;
+        border-radius: 4px;
+        height: 98px;
+        button {
+            outline: none;
+            border: none;
+            background: $white-color;
+            border-radius: 4px;
+            padding: 30px 20px;
+            img {
+                width: 18px;
+            }
+        }
+    }
+}

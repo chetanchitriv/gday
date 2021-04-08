@@ -1,0 +1,92 @@
+@import "../../../scss/custom-variable";
+.creat-event {
+    p {
+        color: #8F8F8F;
+        font-size: $font-size-14;
+        font-family: "ProximaNovaLight";
+    }
+    .upload_box {
+        width: 250px;
+        margin: 0 auto;
+        border: solid 1px rgba(66, 133, 244, 0.55);
+        border-radius: 4px;
+        text-align: center;
+        position: relative;
+        padding: 65px;
+        display: block;
+        cursor: pointer;
+        .upload-img {
+            max-width:160px;
+            position: absolute;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+            top: 24px;
+        }
+        .form-control {
+            position: absolute;
+            font-size: 0 !important;
+            opacity: 0;
+            top: 0;
+            left: 0;
+            padding: 65px;
+        }
+    }
+    .upload-title {
+        color: $text-color;
+        font-size: $font-size-20;
+        font-family: "ProximaNovaSemibold";
+        letter-spacing: 0px;
+        text-align: center !important;
+        margin: 5px auto 0;
+        display: block;
+        width: 250px;
+    }
+    .form-group {
+        label {
+            color: $text-color;
+            font-size: $font-size-14;
+            font-family: "ProximaNovaRegular";
+            letter-spacing: 0px;
+            text-align: left;
+            margin-bottom: 0;
+        }
+        .form-control {
+            color: $text-color;
+            font-size: $font-size-14;
+            font-family: "ProximaNovaRegular";
+            letter-spacing: 0px;
+            letter-spacing: 0px;
+            text-align: left;
+        }
+        .form-check {
+            display: flex;
+            .form-check-label {
+                color: $text-color;
+                font-size: $font-size-14;
+                font-family: "ProximaNovaRegular";
+                .form-check-input {
+                    margin-top: 0.7rem !important;
+                }
+            }
+        }
+    }
+}
+.toggle {
+    border: none;
+    background: transparent;
+    padding: 0;
+    outline: none;
+    display: none;
+    img {
+        width: 25px;
+        opacity: .8;
+    }
+}
+
+
+@media screen and (max-width: 992px) {
+    .toggle{
+        display:block;
+    }
+}

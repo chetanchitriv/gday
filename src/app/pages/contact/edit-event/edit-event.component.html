@@ -1,0 +1,86 @@
+<div class="row">
+    <div class="col-sm-12">
+        <form [formGroup]="EditEventForm" (ngSubmit)="onEditEvent()" *ngIf="EditEventForm" class="creat-event">
+            <h3 class="main-title">Edit Event</h3>
+
+            <div class="form-group mb-5 mt-4">
+                <div class="upload_box">
+                    <img class="upload-img" src="../../../../assets/img/upload.svg" />
+                    <input type="file" class="form-control" id="exampleInputPassword2" placeholder="{{'UPLOAD_IMAGE' | translate}}">
+                </div>
+                <label class="upload-title" for="exampleInputPassword2">{{'UPLOAD_IMAGE' | translate}}</label>
+            </div>
+
+
+        <div class="form-group">
+            <label for="exampleInputPassword1">{{'EVENT_TITLE' | translate}}</label>
+            <input type="text" name="event_name" formControlName="event_name" class="form-control" id="exampleInputPassword1" placeholder="{{'EVENT_TITLE' | translate}}">
+            <div class="validation-div">
+            <app-validation-message [control]="EditEventForm.controls['event_name']" [messages]="messageList.event_name">
+            </app-validation-message>
+        </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="exampleInputPassword1">{{'START_DATE' | translate}}</label>
+                    <input type="date" name="start_date" formControlName="start_date" class="form-control" id="exampleInputPassword1" placeholder="{{'START_DATE' | translate}}">
+                    <app-validation-message [control]="EditEventForm.controls['start_date']" [messages]="messageList.start_date">
+                    </app-validation-message>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="exampleInputPassword1">{{'END_DATE' | translate}}</label>
+                    <input type="date" name="end_date" formControlName="end_date" class="form-control" id="exampleInputPassword1" placeholder="{{'END_DATE' | translate}}">
+                    <app-validation-message [control]="EditEventForm.controls['end_date']" [messages]="messageList.end_date">
+                    </app-validation-message>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="exampleInputPassword1">{{'START_TIME' | translate}}</label>
+                    <input type="time" name="start_time" formControlName="start_time" class="form-control" id="exampleInputPassword1" placeholder="{{'START_TIME' | translate}}">
+                    <app-validation-message [control]="EditEventForm.controls['start_time']" [messages]="messageList.start_time">
+                    </app-validation-message>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="exampleInputPassword1">{{'END_TIME' | translate}}</label>
+                    <input type="time" name="end_time" formControlName="end_time" class="form-control" id="exampleInputPassword1" placeholder="{{'END_TIME' | translate}}">
+                    <app-validation-message [control]="EditEventForm.controls['end_time']" [messages]="messageList.end_time">
+                    </app-validation-message>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="exampleInputPassword1">{{'DESCRIPTION' | translate}}</label>
+            <input type="text" name="description" formControlName="description" class="form-control" id="exampleInputPassword1" placeholder="{{'DESCRIPTION' | translate}}">
+            <app-validation-message [control]="EditEventForm.controls['description']" [messages]="messageList.description">
+            </app-validation-message>
+        </div>
+        <div class="form-group">
+            <div class="form-check">
+                <label class="form-check-label mr-5" for="radio1">
+         <input type="radio" formControlName="type" name="type" class="form-check-input" id="radio1" value="1" >Public
+       </label>
+                <label class="form-check-label" for="radio2">
+         <input type="radio" formControlName="type" name="type" class="form-check-input" id="radio2" value="2">Private
+       </label>
+            </div>
+        </div>
+        <div class="btn-center">
+            <button type="submit" class="btn btn-success">Submit</button>
+
+        </div>
+
+        </form>
+    </div>
+</div>

@@ -1,0 +1,32 @@
+<div style="border-right: 1px solid #e7e7e7;" class="sidebar">
+    <div class="btn-group">
+        <ul>
+            <li [class]="selectedEventType == 'publicEvents'?'active':''" (click)="selectedEventType = 'publicEvents';getPublicEventList()"> {{'Public Events' |titlecase }} </li>
+            <li [class]="selectedEventType == 'privateEvents'?'active':''" (click)="selectedEventType = 'privateEvents';getPrivateEventList()">{{'Private Events' |titlecase }}</li>
+
+        </ul>
+
+    </div>
+    <ul class="nav flex-column">
+        <li class="nav-item" *ngFor="let Event of Events ">
+            <img [src]="Event.event_image ? mediaEndPoint+Event.event_image:'https://homepages.cae.wisc.edu/~ece533/images/airplane.png'" alt="NA">
+            <div class="user-item">
+                <div class="username">
+                    <img class="userimg" [src]="mediaEndPoint+Event.user_image" alt="NA" />
+                    <P>{{Event.description}}</P>
+                </div>
+                <img class="horn" src="../../../assets/img/horn.svg" />
+            </div>
+            <div class="basement-item">
+                <div class="basement">
+                    <h2>{{Event.event_name}}</h2>
+                    <p>Number of Member : {{Event.total_member}} <span>{{Event.start_date}}</span></p>
+                </div>
+                <button class="btn-item" *ngIF="selectedEventType == 'publicEvents'">Join</button>
+            </div>
+        </li>
+        <li *ngIf="Events && Events?.length == 0">
+            No Events Found
+        </li>
+    </ul>
+</div>

@@ -1,0 +1,174 @@
+@import "../../../../scss/custom-variable";
+
+/* login screen Start css */
+
+.auth-screens {
+    @media(min-width:959px) {
+        height: 100vh;
+        overflow: hidden;
+    }
+    .right-side-page {
+        @media(min-width:959px) {
+            display: flex;
+            align-items: center;
+            height: 100vh;   
+        }
+        .form-content{
+            width: 80%;
+            margin: 0 auto;
+            @media(min-width:1600px){
+                width: 65%;
+            }
+            .modal-title{
+                text-align: center;
+                font-size: 40px;
+                margin-bottom: 15px;
+                color: #282828;
+                font-weight: 300;
+                span{
+                    font-weight: bold;
+                }
+            }
+            .sub-title{
+                margin:0 0 20px 0;
+                color: #8F8F8F;
+                font-size: 18px;
+                text-align: center;
+            }
+            p.social-media{
+                margin:20px 0 20px 0;
+                color: #8F8F8F;
+                font-size: 14px;
+                text-align: center;
+            }
+            .form-group{
+                label{
+                    color: #282828 !important;
+                }
+                input{
+                    color: #282828 !important;
+                    font-size: 14px;
+                    &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+                        color: #282828;
+                    }
+                    &::-moz-placeholder { /* Firefox 19+ */
+                        color: #282828;
+                    }
+                    &:-ms-input-placeholder { /* IE 10+ */
+                        color: #282828;
+                    }
+                    &:-moz-placeholder { /* Firefox 18- */
+                        color: #282828;
+                    }
+                }
+            }
+            .eye_img{
+                position: absolute;
+                right: 8px;
+                top: 0;
+            }
+        }
+    }
+    .forgot-password-text{
+        text-align: right;
+        margin-bottom: 30px;
+        a{
+            color: #282828;
+            font-size: 14px;
+        }
+    }
+    .btn_group{
+        .dark-green{
+            background-color: #14BF43;
+            border-radius: 8px;
+            color: #ffffff;
+            font-size: 16px;
+            font-weight: bold;
+            border: 0;
+            padding: 4px 53px;
+            width: fit-content;
+        }
+        ul{
+            li{
+                margin-right: 15px;
+                &:last-child{
+                    margin-right: 0;
+                }
+            }
+        }
+        .sign-up-link{
+            text-align: center;
+            font-size: 14px;
+            a{
+                color: #14BF43;
+                font-weight: bold;
+                font-size: 14px;
+            }
+        }
+    }
+}
+
+
+
+// Responsive View
+@media(min-width:768px) and (max-width:1024px){
+    .banner_text{
+        height: 100%;
+        width: 100%;
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+}
+
+@media(min-width:768px) and (max-width:959px){
+    .right-side-page{
+        margin-top: 40px;
+    }
+    .auth-screens{
+        .row{
+            margin:0;
+            div{
+                padding: 0;
+            }
+        }
+    }
+}
+
+@media(max-width:768px){
+    .right-side-page{
+        margin-top: 40px;
+    }
+    .auth-screens{
+        .right-side-page{
+            .form-content{
+                width: 90%;
+                margin: 0 auto;
+                .modal-title{
+                    font-size: 28px;
+                }
+                .sub-title{
+                    font-size: 16px;
+                }
+            }
+        } 
+        .row{
+            margin:0;
+            div{
+                padding: 0;
+            }
+        }
+    }
+}
+
+.custom-select-box{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    select{
+        margin-right: 10px;
+        width: fit-content;
+    }
+}

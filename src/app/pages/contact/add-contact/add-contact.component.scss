@@ -1,0 +1,101 @@
+@import "../../../../scss/custom-variable";
+.wrapper-body {
+    padding-top: 102px;
+    position: relative;
+    .profile-bg {
+        background: $btnbg;
+        min-height: 350px;
+        position: absolute;
+        left: 0;
+        right: 0;
+    }
+    .profile-pic {
+        width: 300px;
+        margin: 0 auto;
+        text-align: center;
+        .profile-pic-cover {
+            position: relative;
+            width: 180px;
+            height: 180px;
+            margin: 0 auto;
+            .rounded-circle {
+                width: 180px;
+                height: 180px;
+                border-radius: 50%;
+                object-fit: cover;
+            }
+            input.form-control {
+                width: 180px;
+                height: 180px;
+                border-radius: 50%;
+                position: absolute;
+                top: 0;
+                opacity: 0;
+            }
+            .photo-camera {
+                position: absolute;
+                left: 0;
+                right: 0;
+                margin: 0 auto;
+                top: 70px;
+                width: 50px;
+            }
+        }
+        h6 {
+            letter-spacing: 0.52px;
+            font-size: $font-size-26;
+            font-family: "ProximaNovaBold";
+            margin: 15px 0;
+            color: $white-color;
+        }
+        .btn-info {
+            letter-spacing: 0px;
+            font-family: "ProximaNovaRegular";
+            color: $white-color;
+            font-size: $font-size-12;
+            border-radius: 13px;
+            box-shadow: 0px 2px 60px #000044;
+            border: 0.4000000059604645px solid #FFFFFF;
+            background: #FFFFFF33;
+            padding: 2px 10px 2px 2px;
+            height: 27px;
+            line-height: 22px;
+            .pencil {
+                border-radius: 13px;
+                background: $white-color;
+                padding: 5px;
+                margin-right: 5px;
+            }
+        }
+    }
+    .custom-select-box {
+        width: 100%;
+    }
+    .has-float-label {
+        .form-control {
+            color: $text-color;
+            font-family: "ProximaNovaRegular";
+            font-size: $font-size-14;
+            border-radius: 0 !important;
+        }
+        label {
+            letter-spacing: 0px;
+            color: $labelsmall !important;
+            font-family: "ProximaNovaSemibold";
+            font-size: $font-size-14;
+        }
+    }
+    .btn-success {
+        border: none;
+        letter-spacing: 0.32px;
+        width: 120px;
+        height: 40px;
+        margin-top: 40px;
+    }
+}
+
+@media screen and (max-width:575px) {
+    .wrapper-body {
+        padding-top: 72px;
+    }
+}

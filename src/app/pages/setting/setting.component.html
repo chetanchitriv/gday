@@ -1,0 +1,49 @@
+<div style=" border-right: 1px solid #e7e7e7;display: flex" [class]="toggle ?'container-fluid toggled':'container-fluid'">
+    <div class="sidebar-main">
+        <div class="sidebar-setting desktop-view">
+            <h6>Account setting </h6>
+            <div class="list-group mt-3" routerLink="change-password" >
+                <a class="list-group-item list-group-item-action disabled" routerLinkActive="active">Change Password   <img src="../../../assets/img/arrows.svg"> </a>
+            </div>
+            <div class="list-group mt-3" routerLink="push-notification" >
+                <div> <a class="list-group-item list-group-item-action disabled" routerLinkActive="active">push-notification   </a>
+                    <div class="switch-cover">
+                        <label class="switch">
+                    <input type="checkbox" (change)="change($event)">
+                    <span class="slider round"></span>
+                  </label>
+                    </div>
+                </div>
+
+            </div>
+            <div class="list-group mt-3" routerLink="refer-friend"  >
+                <a class="list-group-item list-group-item-action disabled" routerLinkActive="active" >  Refer Friend   <img src="../../../assets/img/arrows.svg"></a>
+            </div>
+            <div class="list-group mt-3" routerLink="blocked-user"  >
+                <a class="list-group-item list-group-item-action disabled" routerLinkActive="active"> Blocked User   <img src="../../../assets/img/arrows.svg"></a>
+            </div>
+            <div class="list-group mt-3" routerLink="term-condition"  >
+                <a class="list-group-item list-group-item-action disabled" routerLinkActive="active"> Terms And Condition   <img src="../../../assets/img/arrows.svg"></a>
+            </div>
+            <div class="list-group mt-3" routerLink="payment-terms"  >
+                <a class="list-group-item list-group-item-action disabled" routerLinkActive="active">  Payment And Terms   <img src="../../../assets/img/arrows.svg"></a>
+            </div>
+            <div class="list-group mt-3" routerLink="about-us"  >
+                <a class="list-group-item list-group-item-action disabled" routerLinkActive="active">  About Us   <img src="../../../assets/img/arrows.svg"></a>
+            </div>
+            <div class="list-group mt-3" routerLink="faqs"  >
+                <a class="list-group-item list-group-item-action disabled" routerLinkActive="active">  FAQs   <img src="../../../assets/img/arrows.svg"></a>
+            </div>
+            <div class="list-group mt-3" routerLink="contact-us"  >
+                <a class="list-group-item list-group-item-action disabled" routerLinkActive="active">  Contact Us   <img src="../../../assets/img/arrows.svg"></a>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="content-wrapper">
+        <button class="toggle toggle-mobile" (click)="toggle = !toggle"><img src="../../../assets/img/closemenu.svg"></button>
+        <router-outlet></router-outlet>
+    </div>
+
+</div>

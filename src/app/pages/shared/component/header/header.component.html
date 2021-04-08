@@ -1,0 +1,92 @@
+
+<header *ngIf="!isVerifiedUser" class="header_Sec">
+    <div class="header-top">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <a class="navbar-brand" routerLink="home">
+                    <img src="../../../assets/img/logo.png" />
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" (click)="toggleNavbar()">
+          <span class="navbar-toggler-icon"
+            ><img src="../../../assets/img/menu.png"
+          /></span>
+        </button>
+                <div class="collapse navbar-collapse tab" id="navbarSupportedContent" [ngClass]="{ 'show': navbarOpen }">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item active ">
+                            <a routerLinkActive="active" routerLink="/home" (click)="toggleNavbar()" >Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a routerLinkActive="active" routerLink="/chat" (click)="toggleNavbar()">Chat</a>
+                        </li>
+                        <li class="nav-item">
+                            <a routerLinkActive="active" routerLink="/myevent" (click)="toggleNavbar()">My Events</a>
+                        </li>
+                        <li class="nav-item">
+                            <a routerLinkActive="active" routerLink="/create-event" (click)="toggleNavbar()">Create Event</a>
+                        </li>
+                        <li class="nav-item">
+                            <a routerLinkActive="active" routerLink="/profile" (click)="toggleNavbar()">Profile</a>
+                        </li>
+                    </ul>
+                    <div class="form-inline login-signup" routerLink="">
+                        Logout
+                    </div>
+                </div>
+                <div class="search-div">
+                    <img src="../../../assets/img/search.svg" class="search-icone">
+                    <img src="../../../assets/img/notification.svg" class="notification-icone">
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+
+<!-- this is after login header section start -->
+<header *ngIf="isVerifiedUser" class="header_Sec bg-header">
+    <div class="header-top">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <a class="navbar-brand" href="#">
+                    <img src="../../../../../assets/img/logo-color.svg" /></a>
+
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"
+            ><img src="../../../assets/img/menu.png"
+          /></span>
+        </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <div class="login-box">
+                        <ul>
+                            <li>
+                                <div class="notification">
+                                    <img src="../../../../assets/img/notification.svg" />
+                                    <span>2</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="wallet-balance">
+                                    <img src="../../../../assets/img/wollet.svg" />
+                                    <span>$ 9,750</span>
+                                    <p>Wallet Balance</p>
+                                </div>
+                            </li>
+                            <li [routerLink]="['/profile']" style="cursor: pointer">
+                                <div class="user">
+                                    <img *ngIf="!userImage" class="user-circle" src="{{
+                      user.profilePicture
+                        ? user.profilePicture
+                        : '../../../../assets/img/user.svg'
+                    }}" />
+                                    <img class="user-circle" *ngIf="userImage" src="{{ userImage }}" />
+                                    <p>{{ user.firstName + " " + user.lastName | titlecase }}</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+<!-- this is after login header section start -->

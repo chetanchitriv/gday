@@ -1,0 +1,7 @@
+<div [class]="showSidebar ?'wrapper-body toggled':'wrapper-body'">
+    <app-event-sidebar></app-event-sidebar>
+    <div class="content-wrapper">
+        <button class="toggle toggle-mobile" (click)="showSidebar = !showSidebar"><img src="../../../assets/img/closemenu.svg"></button>
+        <router-outlet></router-outlet>
+    </div>
+</div>

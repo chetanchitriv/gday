@@ -1,0 +1,13 @@
+<div *ngIf="emailVerificationMessage" class="reset-email-pass">
+    <div class="container">
+        <div class="web-logo text-center">
+            <img src="../../../../../assets/img/logo-color.svg">
+        </div>
+        <div class="inside-email">
+            <p>{{emailVerificationMessage}}</p>
+            <div class="btn_group">
+                <button type="button" (click)="navigateHome()">Go to Home</button>
+            </div>
+        </div>
+    </div>
+</div>

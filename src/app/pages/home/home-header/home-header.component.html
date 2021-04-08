@@ -1,0 +1,111 @@
+   
+         <div *ngIf="!show" class=" " style="  
+         background-color: blue;
+         height: 200x;
+         width: 350px;
+         float: right;
+         margin-right: -145px;
+        opacity: 0.7;">
+
+    
+            <div style="text-align: center; ; height: 200x; background-color: transparent;"  >
+           
+                <div class="d-inline  text-white" style="display: flex;">
+                    <div style="float: left;">   <h6>Group Info </h6> </div>
+                     <div style="float: right;  "  (click)="show = true">
+                         <img   src="assets/img/close.svg" style="width: 40px;"  alt=""> </div>
+                </div>
+                <div style="clear: both;"></div>
+                 <div >
+                    
+                    <img src="https://picsum.photos/100"  style=" width: 100%;  height: 170px;" alt="">
+                       
+                 </div>
+               
+
+                 <div style="display: flex;" >  
+                    <h6 style="color: white; margin-top: -25px;">Live from the basement </h6>
+                       <div style=" margin-left: 65px;     margin-top: -35px;" >
+                        <img src="assets/img/user.svg" style="width: 20px; margin-right: 20px; " alt="">
+                        <img src="assets/img/edit-icon.svg" style="width: 20px; " alt="">
+                       </div>
+
+
+                 </div>
+   
+                  <div style="border-radius: 12px; background-color: white;">
+
+                    <div>
+                       <small style="color: black; float: left;">media shared </small>
+                       <small style="color: blue; float: right;"> see All </small>
+                    </div>
+
+                    <br><br>
+                 
+                   
+   <br>
+                    <div style="float: left;  margin-top: 25px;">
+                        <h6 style="color: white;">participant </h6>
+                        <img src="https://picsum.photos/50"  style=" border-radius: 25px;"   alt="">
+                    
+                    </div>
+                 <div style="float: right; 
+                 color: white; margin-top: -45px;">
+                          <h6 style="    margin-right: 200px;">Alex joe</h6>
+                          <h6 style="    margin-right: 200px;">event creater </h6>
+                 </div>
+                     
+           
+                
+
+                  </div>
+
+
+
+           
+      
+
+
+
+          
+            </div>
+        
+        </div>
+   
+   
+   
+   <div class="row bg-info ontainer-fluid p-1">
+  
+
+    <div class="col-1">
+       <img src="https://picsum.photos/40" class="rounded-circle" alt="">
+    </div>
+
+    <div class="col-9" >
+<h6> Live From Basement </h6>
+    </div>
+
+    <div class="col-2 "  style="display: -webkit-box;">
+        <img class="horn"    src="../../../assets/img/video-camera.png"  style="width: 20px;" />
+   &nbsp;   &nbsp;    &nbsp;
+   <img class="horn"    src="../../../assets/img/phone.png"  style="width: 20px;" />
+   &nbsp;   &nbsp;    &nbsp;
+        <div dropdown class="dropdown-event">
+            <a id="button-basic" dropdownToggle aria-controls="dropdown-basic">
+        <img class="horn"    src="../../../assets/img/three-dots-vertical.svg" />
+        </a> 
+            <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu" role="menu" aria-labelledby="button-basic">
+              <li role="menuitem" (click)="info()">Event info </li>
+              <!-- <li role="menuitem"><a class="dropdown-item" routerLink="Live">Event Media</a></li> -->
+              <li role="menuitem"><a class="dropdown-item" routerLink="media">Event Media</a></li>
+              <li role="menuitem"><a class="dropdown-item" routerLink="task"> Task </a></li>
+            </ul>
+        </div> 
+    </div>
+</div>
+
+
+
+
+
+

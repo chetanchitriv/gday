@@ -1,0 +1,236 @@
+  <br> <br>
+
+   <div class="row">
+
+    <div class="col-6" >
+       
+
+        <div class="auth-screens">
+            <form *ngIf="taskForm" [formGroup]="taskForm" (ngSubmit)="onAdd()" >
+        
+                <div class="row">
+        
+                 
+                    <div class="col-lg-6 col-md-12 col-sm-12">
+                        <div class="right-side-page">
+                            <div class="form-content">
+                                
+        
+                                <div class="form-group">
+                                    <label for="exampleInputPassword1">{{'DESCRIPTION' | translate}}</label>
+                                    <input type="text" name="description" formControlName="description" class="form-control" id="exampleInputPassword1" placeholder="{{'DESCRIPTION' | translate}}">
+                                    <app-validation-message [control]="taskForm.controls['description']" [messages]="messageList.description">
+                                    </app-validation-message>
+                                </div>
+
+                               <select name="" id="">
+
+
+                                <option value="">  select member </option>
+                                <option value=""> Joe Root</option>
+                                <option value=""> Joe Root</option>
+                                <option value=""> Joe Root</option>
+                                <option value=""> Joe Root</option>
+                               </select>
+        
+                                <div class="btn_group">
+                                    <button type="submit" class="dark-green" >Add </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        
+        
+            </form>
+        </div>
+
+
+
+
+    
+    </div>
+
+
+      <div class="col-6"  > 
+ <h3>   Assigned Task </h3>
+
+ 
+     <div style="display: flex;">   
+    <div>
+        <img src="https://picsum.photos/40" class="rounded-circle" alt="">
+ 
+    </div>   &nbsp;  &nbsp; &nbsp;
+  
+    <div>
+
+        <div class="list-group">
+            <h6 class="mb-1"> joe root </h6>
+            <li  class="list-group-item list-group-item-action flex-column align-items-start">
+             
+               <div style="margin-left: 280px;">  
+              <img src="/assets/img/pencil.svg" alt="">  
+              &nbsp;   &nbsp;   &nbsp;
+              <img src="/assets/img/pencil.svg" alt="">
+            </div>
+              <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+              
+            </li>
+            
+          </div>
+    </div> 
+</div>
+
+
+
+
+<div style="display: flex;">   
+    <div>
+        <img src="https://picsum.photos/40" class="rounded-circle" alt="">
+ 
+    </div>   &nbsp;  &nbsp; &nbsp;
+  
+    <div>
+
+        <div class="list-group">
+            <h6 class="mb-1"> joe root </h6>
+            <li  class="list-group-item list-group-item-action flex-column align-items-start">
+             
+               
+                <h6 style="color: green; margin-left: 280px;">complited</h6>
+           
+              <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+              
+            </li>
+            
+          </div>
+    </div> 
+</div>
+
+
+<div style="display: flex;">   
+    <div>
+        <img src="https://picsum.photos/40" class="rounded-circle" alt="">
+ 
+    </div>   &nbsp;  &nbsp; &nbsp;
+  
+    <div>
+
+        <div class="list-group">
+            <h6 class="mb-1"> joe root </h6>
+            <li  class="list-group-item list-group-item-action flex-column align-items-start">
+             
+               
+                <h6 style="color: green; margin-left: 280px;">complited</h6>
+         
+              <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+              
+            </li>
+            
+          </div>
+    </div> 
+</div>
+
+
+
+<div style="display: flex;">   
+    <div>
+        <img src="https://picsum.photos/40" class="rounded-circle" alt="">
+ 
+    </div>   &nbsp;  &nbsp; &nbsp;
+  
+    <div>
+
+        <div class="list-group">
+            <h6 class="mb-1"> joe root </h6>
+            <li  class="list-group-item list-group-item-action flex-column align-items-start">
+              
+               
+              
+              <h6 style="color: green; margin-left: 280px;">complited</h6>
+           
+              <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+              
+            </li>
+            
+          </div>
+    </div> 
+</div>
+
+
+
+<div style="display: flex;">   
+    <div>
+        <img src="https://picsum.photos/40" class="rounded-circle" alt="">
+ 
+    </div>   &nbsp;  &nbsp; &nbsp;
+  
+    <div>
+
+        <div class="list-group">
+            <h6 class="mb-1"> joe root </h6>
+            <li  class="list-group-item list-group-item-action flex-column align-items-start">
+            
+               
+                <h6 style="color: green; margin-left: 280px;">complited</h6>
+            
+              <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+              
+            </li>
+            
+          </div>
+    </div> 
+</div>
+
+
+<div style="display: flex;">   
+    <div>
+        <img src="https://picsum.photos/40" class="rounded-circle" alt="">
+ 
+    </div>   &nbsp;  &nbsp; &nbsp;
+  
+    <div>
+
+        <div class="list-group">
+            <h6 class="mb-1"> joe root </h6>
+            <li  class="list-group-item list-group-item-action flex-column align-items-start">
+           
+               
+                <h6 style="color: green; margin-left: 280px;">complited</h6>
+           
+              <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+              
+            </li>
+            
+          </div>
+    </div> 
+</div>
+
+
+
+<div style="display: flex;">   
+    <div>
+        <img src="https://picsum.photos/40" class="rounded-circle" alt="">
+ 
+    </div>   &nbsp;  &nbsp; &nbsp;
+  
+    <div>
+
+        <div class="list-group">
+            <h6 class="mb-1"> joe root </h6>
+            <li  class="list-group-item list-group-item-action flex-column align-items-end">
+              
+               
+              <h6 style="color: green; margin-left: 280px;">complited</h6>
+            
+              <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+              
+            </li>
+            
+          </div>
+    </div> 
+</div>
+    </div>
+
+
+   </div>

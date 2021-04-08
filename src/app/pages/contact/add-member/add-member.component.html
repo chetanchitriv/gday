@@ -1,0 +1,49 @@
+<div class="container">
+    <div class="title-div">
+        <h3 class="main-title">Add Member</h3>
+        <input type="text" placeholder="Search Contact" class="search-item">
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <h6>G'dayHive contact </h6>
+            <ng-container *ngIf="contacts && contacts.app;else app">
+                <div class="dayHive-contacts" *ngFor="let contact of contacts.app">
+                    <img src=" https://picsum.photos/80/50" class="rounded-circle" alt="round img">
+                    <div class="dayHive-box">
+                        <div class="dayHive-box-content">
+                            <label>{{contact.name}}</label>
+                            <small> {{contact.country_code+contact.mobile}} </small>
+                        </div>
+                        <button class="round-btn">Add</button>
+                    </div>
+                </div>
+               
+            </ng-container>
+            
+            <ng-template #app>
+                No G'dayHive Contact Found
+                                </ng-template>
+        </div>
+        <div class="col-md-6">
+            <h6>All contact </h6>
+            <ng-container *ngIf="contacts && contacts.nonapp;else nonapp;">
+                <div class="dayHive-contacts" *ngFor="let contact of contacts.nonapp">
+                    <img src=" https://picsum.photos/80/50" class="rounded-circle" alt="round img">
+                    <div class="dayHive-box">
+                        <div class="dayHive-box-content">
+                            <label>{{contact.name}}</label>
+                            <small> {{contact.country_code+contact.mobile}} </small>
+                        </div>
+                        <button class="round-btn">Invite</button>
+                    </div>
+                </div>
+                
+            </ng-container>
+            <ng-template #nonapp>
+                No Contact Found
+                                </ng-template>
+         
+        </div>
+    </div>
+</div>

@@ -1,0 +1,90 @@
+
+<div class="wrapper-body">
+    <div class="subscription">   
+        <h1>Premium Membership</h1>
+        <p>by becoming a premium member you would be able to unlock the all feature of the application by paying a nominal fee of $99</p>
+        <button class="btn btn-primary" (click)="navigate()">skip</button>
+    </div>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <div class="row mt-5 mb-5">
+                    <div class="col-lg-4 col-md-4 mt-3" *ngFor="let subcription of SubcriptionList">
+                        <div class="card">
+                            <div class="img-cover">
+                <img [src]="subcription.Images" alt=""> 
+            </div>
+                            <div class="content-box">
+                <h3 [innerHTML]="subcription.subscription_name"></h3>
+                                <p [innerHTML]="subcription.description" class="description"></p>
+            <h5 >$ {{subcription.amount}} </h5>
+                                <button class="btn btn-success" (click)="openModal(subcription)">Subscribe</button>
+            </div>
+                        </div>
+
+           
+        </div>
+
+        
+        
+                </div>
+
+       
+            </div>
+            </div>
+
+
+  
+
+
+
+              <div *ngIf="modalOpened" class="modal-backdrop fade show"></div>
+              <div *ngIf="modalOpened" role="dialog" tabindex="-1" class="modal fade show d-block">
+                <div role="document" class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h6>Please provide following details</h6>
+                      <button type="button" class="close pull-right" style="padding: 25px;" aria-label="Close" (click)="modalOpened = false">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body" >
+                      <select class="form-control" #cardId style="border: 1px solid #ccc !important;
+                        border-radius: 5px !important;">
+                        <option>--Select Card --</option>
+                        <option *ngFor="let card of cardlist"  [value]="card.id">xxxx xxxx xxxx {{card.last4}} &nbsp; {{card.exp_month}}
+                          / {{card.exp_year}}  </option>
+                      </select>
+                      <br>
+                      <button class="btn btn-success" (click)="subscription(cardId)">Pay</button>
+                      <br>
+                      <a style="color: rgb(56, 144, 196);cursor: pointer;" (click)=" ShowHideButton()" >Add Card </a>
+                      <form novalidate (ngSubmit)="createToken()" [formGroup]="stripeTest"  *ngIf="!showMainContent" >
+                        <input class="form-control" type="text"   formControlName="name" placeholder="Jane Doe" 
+                          >
+                        <br>
+                        <ngx-stripe-card     
+                          [options]="cardOptions"
+                          [elementsOptions]="elementsOptions"
+                        ></ngx-stripe-card>
+          
+                      <br>
+          
+                        <button type="submit" class="btn btn-success"  >
+                          Submit
+                        </button>
+&nbsp;&nbsp;
+                        <button type="button" class="btn btn-light" (click)="showMainContent = true" >
+                          Cancel
+                        </button>
+                      </form>
+                    </div>
+                    
+                  </div>
+                </div>
+              </div>
+
+
+
+        
+       

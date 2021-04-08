@@ -1,0 +1,157 @@
+<div class="auth-screens">
+    <form [formGroup]="userSignUpForm" (ngSubmit)="onSignUp()" *ngIf="userSignUpForm">
+        <div class="row">
+            <div class="col-lg-6 col-md-12 col-sm-12">
+                <div class="banner_text">
+                    <img src="assets/img/dday-img/auth-leftside.png" class="img-fluid">
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-12 col-sm-12">
+                <div class="right-side-page">
+                    <div class="form-content">
+                        <h4 class="modal-title">Welcome to <span>G'dayHive</span></h4>
+                        <p class="sub-title">Please provide following details to Register into the system</p>
+
+                        <div class="form-group input-group mb-0">
+                            <div class="has-float-label">
+                                <div class="upload-profile-icon">
+                                    <input type="file" class="form-control" (change)="onChange($event)">
+                                    <div class="upload-img">
+                                        <img [src]="profile_image?profile_image:'assets/img/cam-icon.png'">
+                                    </div>
+                                </div>
+                            </div>          
+                            <label class="text-center">{{'UPLOAD_PHOTO' | translate}}</label>
+                            <label class="text-center">
+                                <div class="validation-div">
+                                    <app-validation-message [control]="userSignUpForm.controls['image']"
+                                        [messages]="messageList.image">
+                                    </app-validation-message>
+                                </div>
+                                </label>
+                        </div>
+
+
+                        <div class="form-group input-group">
+                            <div class="has-float-label">
+                                <input type="text" class="form-control" formControlName="fullName" trim="blur"
+                                    maxlength="50" placeholder="{{'NAME' | translate}}">
+                                <label>{{'NAME' | translate}}</label>
+                            </div>
+                            <div class="validation-div">
+                                <app-validation-message [control]="userSignUpForm.controls['fullName']"
+                                    [messages]="messageList.fullName">
+                                </app-validation-message>
+                            </div>
+                        </div>
+
+
+
+                        <div class="form-group input-group">
+                            <div class="has-float-label tel">
+                                <label>{{'PHONE_NUMBER' | translate}}</label>
+                            <ngx-intl-tel-input [cssClass]="'form-control'" [preferredCountries]="preferredCountries"
+                            [enableAutoCountrySelect]="true" [enablePlaceholder]="true" [searchCountryFlag]="true"
+                            [searchCountryField]="[SearchCountryField.Iso2, SearchCountryField.Name]" [selectFirstCountry]="false"
+                            [selectedCountryISO]="CountryISO.India" [maxLength]="15"
+                            [phoneValidation]="false" [separateDialCode]="separateDialCode"
+                            [numberFormat]="PhoneNumberFormat.National" name="phone" formControlName="phone" (keyup)="ValidateMobile()">
+                        </ngx-intl-tel-input>
+                            </div>
+                            <div class="validation-div">
+                                <app-validation-message [control]="userSignUpForm.controls['mobile']"
+                                    [messages]="messageList.mobile">
+                                </app-validation-message>
+                            </div>
+                        </div>
+                        <div class="form-group input-group">
+                            <div class="has-float-label">
+                                <input type="email" class="form-control" formControlName="email" placeholder="{{'EMAIL' | translate}}"
+                                    trim maxlength="60">
+                                <label>{{'EMAIL' | translate}}</label>
+                            </div>
+                            <div class="validation-div">
+                                <app-validation-message [control]="userSignUpForm.controls['email']"
+                                    [messages]="messageList.email">
+                                </app-validation-message>
+                            </div>
+                        </div>
+
+
+                        <div class="form-group input-group">
+                            <div class="has-float-label">
+                                <input type="text" class="form-control" formControlName="referral_code"
+                                    placeholder="{{'REFERRAL_CODE' | translate}}" trim maxlength="10">
+                                <label>{{'REFERRAL_CODE' | translate}}</label>
+                            </div>
+                            <div class="validation-div">
+                                <app-validation-message [control]="userSignUpForm.controls['referral_code']"
+                                    [messages]="messageList.referral_code">
+                                </app-validation-message>
+                            </div>
+                        </div>
+
+                        <div class="form-group input-group">
+                            <img src="../../../../assets/img/Hide.svg" style="cursor: pointer;z-index: 99999999;" class="eye_img mouse-hover" (click)="toggleConfirmPasswordType()"   
+                            *ngIf="confirmPasswordType === 'password'" />
+                            <img src="../../../../assets/img/eye-open.svg" style="cursor: pointer;z-index: 99999999;" class="eye_img mouse-hover" (click)="toggleConfirmPasswordType()"   
+                            *ngIf="confirmPasswordType === 'text'" />
+                            <div class="has-float-label">
+                                <input type="password" class="form-control" formControlName="password"
+                                    placeholder="{{'PASSWORD' | translate}}" trim="blur" maxlength="13" [type]="confirmPasswordType">
+                                <label for="password">{{'PASSWORD' | translate}}</label>
+                            </div>
+                            <div class="validation-div">
+                                <app-validation-message [control]="userSignUpForm.controls['password']"
+                                    [messages]="messageList.password">
+                                </app-validation-message>
+                            </div>
+                        </div>
+
+                        <div class="form-group input-group">
+                            <img src="../../../../assets/img/Hide.svg" style="cursor: pointer;z-index: 99999999;" class="eye_img mouse-hover" (click)="ConfirmPassword()"   
+                            *ngIf="confirmPassword === 'password'" />
+                            <img src="../../../../assets/img/eye-open.svg" style="cursor: pointer;z-index: 99999999;" class="eye_img mouse-hover" (click)="ConfirmPassword()"   
+                            *ngIf="confirmPassword === 'text'" />
+                            <div class="has-float-label">
+                                <input type="password" class="form-control" formControlName="confirm_password"
+                                    placeholder="{{'CONFIRM_PASSWORD' | translate}}" trim maxlength="13" [type]=" confirmPassword">
+                                <label for="password">{{"CONFIRM_PASSWORD" | translate}}</label>
+                            </div>
+                            <div class="validation-div">
+                                <small class="form-text text-muted error">
+                                    <div
+                                        *ngIf="(!userSignUpFormControls['confirm_password'].errors || !userSignUpFormControls['confirm_password'].errors.required) &&
+                                        userSignUpFormControls['password'].touched &&   userSignUpFormControls['confirm_password'].touched &&
+                                        userSignUpFormControls['confirm_password'].errors &&   userSignUpFormControls['confirm_password'].errors.confirm_password">
+                                        {{'ERR_PASSWORD_NOT_MATCH' | translate}}
+                                    </div>
+                                </small>  
+                            </div>
+                        </div>
+
+                        <div class="btn_group text-center">
+                            <button type="submit" prevent-double-submit class="dark-green">Next</button>
+
+                            <p class="social-media">Sign In with Social Media </p>
+                            <ul class="d-flex justify-content-center">
+                                <li><a href="#"> <img src="assets/img/dday-img/fb.png" width="50px"></a></li>
+                                <li><a href="#"> <img src="assets/img/dday-img/google.png" width="50px"></a></li>
+                                <li><a href="#"> <img src="assets/img/dday-img/insta.png" width="50px"></a></li>
+                                <li><a href="#"> <img src="assets/img/dday-img/ios.png" width="50px"></a></li>
+                            </ul>
+                            <div class="sign-up-link">
+                                <p>Don't have an account? <a class="mouse-hover" routerLink=""> Sign In</a></p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </form>
+</div>
+<!-- Register user      screen end -->

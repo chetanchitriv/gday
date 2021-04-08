@@ -1,0 +1,13 @@
+<div [class]="showSidebar ?'wrapper-body toggled':'wrapper-body'">
+    <app-myevent-sidebar></app-myevent-sidebar>
+    <div class="content-wrapper">
+        <button class="toggle toggle-mobile" (click)="showSidebar = !showSidebar"><img src="../../../assets/img/closemenu.svg"></button>
+             <div class="container">
+            <div class="public-event">
+                <img src="assets/img/calender.svg" alt="">
+                <p>currently there are no <b>"Event"</b></p>
+            </div>
+
+        </div>
+    </div>
+</div>
